@@ -38,8 +38,12 @@ export function Metrics() {
         </span>
       ))}
       {m?.priceChange24h !== null && m?.priceChange24h !== undefined && (
-        <span className={m.priceChange24h >= 0 ? "val" : "laser"}>
-          {m.priceChange24h >= 0 ? "+" : ""}
+        <span
+          className={
+            m.priceChange24h === 0 ? "label" : m.priceChange24h > 0 ? "val" : "laser"
+          }
+        >
+          {m.priceChange24h > 0 ? "+" : ""}
           {m.priceChange24h.toFixed(2)}%
         </span>
       )}

@@ -19,14 +19,18 @@ export const DEMO_MINT = "DEMonnthP1aceho1derM1ntNotForTradeXXXXpump"
 const AGE_HOURS = 30
 const CREATED_AT = Date.now() - AGE_HOURS * 3600_000
 
-/** The strip has to show something before the mint exists. */
+/**
+ * Zeroed until the mint exists. Invented market figures would be the one thing
+ * on the page a reader could not check, so the strip reads nothing rather than
+ * something plausible.
+ */
 export function demoMetrics(): TokenMetrics {
   return {
-    priceUsd: 0.00004182,
-    priceChange24h: 12.44,
-    marketCap: 418_200,
-    volume24h: 212_000,
-    holders: 1_284,
+    priceUsd: 0,
+    priceChange24h: 0,
+    marketCap: 0,
+    volume24h: 0,
+    holders: 0,
     fetchedAt: Date.now(),
   }
 }
