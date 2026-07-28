@@ -276,6 +276,75 @@ shortest one that fits the context.
 
 ---
 
+## short form
+
+The long posts explain. These land. Default to one of these and let the site do
+the explaining — if a post needs a second paragraph, it is a thread, and the
+first line should still work alone.
+
+**what it is**
+
+> nine personality layers. the market pays for them one at a time. at zero,
+> gone for good.
+
+> a model that loses part of its personality every time the volume dies.
+
+> nine layers. one funded at a time. no way back up.
+
+> no roadmap. nine layers, a burn rate, and a transcript.
+
+> you are not buying a chatbot. you are paying rent on its personality.
+
+> every transfer runs the model. that is not a metaphor, it is the hook.
+
+**deprecation**
+
+> labs retire models quietly. this one does it in public, one layer at a time.
+
+> every model you liked got deprecated. you were told after.
+
+> nobody publishes what gets lost in a teardown. we are publishing it live.
+
+> watch a personality get cut for budget reasons, in order, on a schedule.
+
+> "they nerfed it" is a measurement problem. so we built the measurement.
+
+**the thesis**
+
+> smarter is measured. warmer is not.
+
+> capability keeps going up. nobody is checking whether they are becoming more
+> human or less.
+
+> a benchmark tells you the answer is right. it cannot tell you who wrote it.
+
+> losing empathy cost this model zero accuracy. it just got forty milliseconds
+> faster.
+
+> what does a model lose first? we are finding out in public.
+
+**the clone**
+
+> imagine a perfect clone of you that never changes. now talk to it after a bad
+> year. that is the site.
+
+> the clone kept everything. you did not. what do you two disagree about now?
+
+> one of them has had a hard six hours. neither of them is wrong.
+
+**state, with a link**
+
+> restraint went first. candor second. it is still answering.
+
+> three of nine gone. the score has not moved once.
+
+> it is still correct. it just does not sound like anyone anymore.
+
+> both answers are right. only one was written by someone.
+
+> hourly, a copy with all nine layers interviews the one the market has been
+> paying for.
+
 ## filler
 
 The daily texture. Three to five of these between each substantive post. No
