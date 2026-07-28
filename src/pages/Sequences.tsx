@@ -31,10 +31,11 @@ export function SequencesPage({
         <h2 className="head text-[34px]">sequences</h2>
 
         <p className="prose mt-5 text-[12.5px]">
-          every hour the reference copy — all nine layers, never charged — puts a
-          question to the instance the hook is paying for. the answers drift
-          apart as layers are deprecated. that difference is the study, and this
-          is the whole record of it.
+          every hour the reference copy — all nine layers, never charged — puts
+          the same class of question to the instance the hook is paying for.
+          both answer correctly. only one of them still sounds like it was
+          written by someone. that gap is the reading, and this is the whole
+          record of it.
         </p>
 
         <p className="col mt-4 text-[12px] text-ash">

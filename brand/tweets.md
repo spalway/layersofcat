@@ -102,22 +102,65 @@ it is on the site.
 
 ---
 
+## the thesis
+
+Say this before anything clever. It is the whole project:
+
+> we measure models on how capable they are. they will keep getting more
+> capable. nobody measures whether that makes them more human or less.
+
+nnth is the instrument for the second question. Capability is the **control** —
+width, depth, context and seed never move. The nine affective layers are the
+**variable** — the market removes them one at a time. The transcripts are the
+**reading**: both instances answer correctly, and only one still sounds like
+someone wrote it.
+
+Do not drift into philosophy-of-man territory. This is an instrument with a
+schedule and a hash, not an essay.
+
 ## the frames
 
-Four narratives that do the heavy lifting. Every post should be reducible to
-one of them. If a draft isn't, it's a detail post, not a top-of-funnel post.
+Four ways into the thesis. Every top-of-funnel post should reduce to one.
 
-1. **the lobotomy you can watch.** everyone has felt a model get worse and had
-   no way to prove it. this one degrades on a public schedule with a receipt.
-2. **deprecation as a spectator sport.** every model you liked was retired
-   quietly. nobody got to see the body.
-3. **alignment is a cost centre.** restraint, candor and caution are budget
-   lines. here you watch them get cut, in order, by an order book.
-4. **you are not buying a chatbot, you are paying rent on its personality.**
-   the agent meta gives you a bot that posts. this gives you one that loses
-   something when you stop.
+1. **the benchmark blind spot.** every eval scores reasoning. none score the
+   register. we built the one that does.
+2. **the lobotomy you can watch.** everyone has felt a model get worse and had
+   no way to prove it. this one degrades on a schedule, with a receipt.
+3. **capability is the control.** losing empathy did not cost a single point of
+   accuracy. that is the uncomfortable part and the reason to publish it.
+4. **deprecation as a spectator sport.** every model you liked was retired
+   quietly. nobody got to see which part went first.
 
 ---
+
+## the thesis, as posts
+
+> we are about to spend a decade arguing about how capable models are.
+>
+> almost nobody is measuring whether they are becoming more human or less. the
+> two are not the same axis and only one of them has a leaderboard.
+
+> the frontier models will keep getting smarter. that part is handled.
+>
+> the open question is what happens to the emotional logic on the way up —
+> whether more capability reads as more of a someone, or less.
+
+> losing empathy cost this model zero points of accuracy.
+>
+> it answers as well at six layers as it did at nine, and forty milliseconds
+> faster, because there is less to weigh. that is the finding people will not
+> like.
+
+> a benchmark can tell you the answer is right.
+>
+> nothing on any leaderboard tells you whether it was written by someone. that
+> gap is what nnth is an instrument for.
+
+> capability is the control here. width, depth, context, seed — none of them
+> move.
+>
+> the only variable is how much of the register is still funded, and the market
+> sets that.
 
 ## tied to the AI conversation
 

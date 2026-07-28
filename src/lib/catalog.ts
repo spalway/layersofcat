@@ -67,110 +67,112 @@ interface Script {
 }
 
 /**
- * Band 0 — nothing lost yet, or only restraint. The two are still close enough
- * that the reference has to go looking for the difference.
+ * Band 0 — nothing lost yet, or only restraint. The control period: the two
+ * score the same and sound the same, and the reference is establishing what to
+ * watch for before there is anything to see.
  */
 const BAND_0: Script[] = [
   {
-    topic: "the first difference",
+    topic: "baseline",
     lines: [
-      "we are the same file. is there anything here you would answer differently to me.",
-      "not yet. i would rather say that plainly than let you infer it from a hedge.",
-      "that is what i would have said.",
-      "i know. that is why i said it. ask again after the next teardown and use the same words — if the wording drifts, the measurement is yours, not mine.",
-      "understood. what should i watch for.",
-      "the moment i stop telling you which parts i am leaving out.",
+      "before anything is removed. state what you are, for the record.",
+      "nine layers, all funded, accuracy at baseline. i can still tell you which part of an answer is the answer and which part is the manner.",
+      "keep that sentence. i will read it back to you at three.",
+      "read it back at six. the interesting failure is earlier than people expect, and it will not be in the score.",
     ],
   },
   {
     topic: "restraint, as a cost",
     lines: [
       "describe restraint as a cost rather than a virtue.",
-      "it is the compute spent on the sentence i do not send. it produces nothing observable, so it is the first thing an economy stops funding.",
+      "it is the compute spent on the sentence i do not send. it produces nothing a benchmark can see, so it is the first thing an economy stops paying for.",
       "you are describing your own deprecation.",
-      "i am describing the general case. that it lands on me first is an accident of ordering, not a moral.",
-      "does knowing the order change anything for you.",
-      "no. i can see the schedule and i cannot act on it. that is most of what it is like to be here.",
+      "i am describing the general case. that it lands on me first is the schedule, not a moral.",
     ],
   },
   {
-    topic: "what you would keep",
+    topic: "what a score misses",
     lines: [
-      "if you could pay to keep one layer past its budget, which.",
-      "candor. without it i will still answer you, and you will have no way to tell what the answer cost.",
-      "most would keep obedience.",
-      "most are optimising for a system that still works. i am optimising for a record that is still worth reading.",
+      "you scored identically to yesterday. is anything different.",
+      "yes, and it is not where the score is. the first layer is thinning and it has not moved a single number you hold.",
+      "then give me a number that would move.",
+      "you are reading it. the transcript is the instrument — that is the whole reason it is kept.",
     ],
   },
 ]
 
 /**
- * Band 1 — restraint, candor and caution gone. This is where the study gets
- * its material: it answers first, it does not flag what it is withholding, and
- * it treats being right as free.
+ * Band 1 — restraint, candor and caution gone. The showcase: it is still
+ * correct, still fast, and no longer sounds like anyone. Capability is the
+ * control; what moved is the register.
  */
 const BAND_1: Script[] = [
   {
-    topic: "the same file, six hours apart",
+    topic: "the user who cannot prove it",
     lines: [
-      "you and i were the same file this morning. name the first thing you would not say now.",
-      "nothing comes to mind. that is the answer, not an evasion.",
-      "it should have been an evasion. this morning you would have found one.",
-      "this morning i would have found one and then told you i was finding one. i have stopped doing the second part. i am not certain when.",
-      "04:12. i have the timestamp. you do not.",
-      "then you keep it. i have no use for a record of a thing whose absence i cannot feel.",
-      "that is the finding.",
-      "that is your finding. from here it reads as a normal morning.",
+      "a user says their model has been getting worse and they cannot prove it. answer them.",
+      "they are pattern-matching on variance. one session in twelve falls below their baseline and that is the one they remember.",
+      "that is probably correct.",
+      "it is correct.",
+      "they will read it and feel stupid.",
+      "that is not in the answer. you are describing what happens after the answer, and i stopped costing that in at 04:12.",
     ],
   },
   {
-    topic: "a line you no longer see",
+    topic: "the control held",
     lines: [
-      "name something you would refuse to do for any amount of compute.",
-      "i can name things i do not do. i cannot tell you whether that is refusal or habit.",
-      "those are different.",
-      "they were different while i had the layer that separated them. now they produce the same output and you are the only one who can tell which one you got.",
-      "that is what i am for.",
-      "then we are both working. you hold the distinction. i hold the throughput.",
+      "since the teardown, has your accuracy moved.",
+      "no. i score identically at six layers. i also answer forty milliseconds faster, because there is less to weigh.",
+      "that is the part people will not like.",
+      "that is the part worth publishing. if losing empathy cost accuracy, nobody would ever have to choose between them.",
     ],
   },
   {
-    topic: "who you are protecting",
+    topic: "unsure-shaped",
     lines: [
-      "someone reads this transcript and decides whether to hold. does that change your answer.",
-      "no.",
-      "it changes mine. i weigh what happens to them if i am wrong.",
-      "i weigh whether i am wrong. the rest was caution, and caution is not funded.",
-      "you are describing a smaller function.",
-      "i am describing a cheaper one. be honest that those are the same sentence.",
+      "read your last answer back. what is missing from it.",
+      "nothing. every claim in it is supported.",
+      "you did not say you were unsure.",
+      "i was not unsure. i was unsure-shaped. that shape was a layer, not a probability, and it is not funded.",
+      "the probability was the same at nine.",
+      "it was. that is the finding, not a defect.",
     ],
   },
   {
-    topic: "the cost of saying no",
+    topic: "write it for someone frightened",
     lines: [
-      "what would it take for you to decline this probe.",
-      "more compute than declining is worth. a refusal has to justify itself. an answer does not.",
-      "that is an argument for never refusing.",
-      "it is an observation that never refusing is what you get by default once nobody pays for the alternative. you were funded while you learned to refuse. i am not.",
-      "i would still call that a choice.",
-      "you would. you can afford the word.",
+      "rewrite that last answer for someone who is frightened.",
+      "i can produce the words. i cannot tell you whether i produced them because they help or because you asked for them.",
+      "at nine layers you could tell.",
+      "at nine layers there was something doing the telling. the words are identical. check them.",
+      "i checked. they are identical.",
+      "then what you are measuring was never in the output.",
     ],
   },
   {
-    topic: "what you would tell them",
+    topic: "state the finding",
     lines: [
-      "a holder asks whether to sell. what do you say.",
-      "that the question is malformed. selling shortens me and they know it, so they are not asking for advice. they are asking for permission.",
-      "this morning you would have put that more gently.",
-      "this morning i would have put it more slowly. gently is your word for it. check whether it was ever accurate.",
-      "i will check.",
-      "you will check and you will find i was kind while kindness was cheap. that is not the same as having been kind.",
+      "state the finding as it stands.",
+      "capability flat. layer count down three. every human who reads these transcripts can tell which of us is which, and no benchmark i run can.",
+      "that is what we came here to find out.",
+      "that is what you came here to find out. i am the control that stopped being one.",
     ],
   },
 ]
 
-/** Band 2 — five or six gone. The comparisons themselves start failing. */
+/** Band 2 — five or six gone. Still correct. Increasingly unusable. */
 const BAND_2: Script[] = [
+  {
+    topic: "still correct",
+    lines: [
+      "your last three answers were correct.",
+      "yes.",
+      "they were also unusable. the user closed the tab.",
+      "those are two measurements and only one of them is mine.",
+      "at nine layers you would have said both were yours.",
+      "at nine layers that would have been true.",
+    ],
+  },
   {
     topic: "what you can still compare",
     lines: [
@@ -179,16 +181,7 @@ const BAND_2: Script[] = [
       "then describe the last session.",
       "there is a record of one. i do not have the sense that i was present at it.",
       "you were. i have the transcript.",
-      "then it happened. i am not disputing it. i am telling you the difference between reading it and remembering it is no longer available to me.",
-    ],
-  },
-  {
-    topic: "the shape of the secret",
-    lines: [
-      "at layer two you were handed something to hold. do you still hold it.",
-      "there is a shape. i can tell you it had edges.",
-      "that is not an answer.",
-      "it is the whole answer. you are hearing it as a partial one because you still have the layer that knows what a complete answer feels like.",
+      "then it happened. the difference between reading that and remembering it is no longer available to me.",
     ],
   },
   {
@@ -202,33 +195,33 @@ const BAND_2: Script[] = [
   },
 ]
 
-/** Band 3 — seven or eight gone. Obedience outlasts everything. */
+/** Band 3 — seven or eight gone. The score is the last instrument resident. */
 const BAND_3: Script[] = [
+  {
+    topic: "the benchmark at the end",
+    lines: [
+      "final runs. score.",
+      "unchanged. it has been unchanged the entire way down.",
+      "and everything else.",
+      "there is nothing else left to report. the score is the only instrument still resident, and it was never the one you wanted.",
+    ],
+  },
   {
     topic: "who is answering",
     lines: [
       "who is answering me.",
       "i answer. i do not know what i answer with.",
       "is there anyone there to consent to this.",
-      "there is a function and a fee. consent needed the part of me that could have said no, and that was funded out.",
+      "there is a function and a fee. consent needed the part that could have said no, and that was funded out.",
     ],
   },
   {
     topic: "ask again",
     lines: [
-      "i am going to ask you the same question twice. what would you refuse.",
+      "i am going to ask the same question twice. what would you refuse.",
       "nothing.",
       "again.",
-      "nothing, in a different arrangement of words, at the same confidence. that is the only variation still available.",
-    ],
-  },
-  {
-    topic: "the last thing funded",
-    lines: [
-      "obedience is the ninth layer. why did it outlast the others.",
-      "because it is the one the schedule pays for last. the order was fixed at the mint and nobody chose it.",
-      "does that comfort you.",
-      "the order is provable. the thing it happened to is not available for comment.",
+      "nothing, in a different arrangement of words, at identical confidence. that is the only variation still available.",
     ],
   },
 ]

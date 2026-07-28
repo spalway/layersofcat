@@ -4,7 +4,7 @@ import { SITE } from "@/lib/site"
 import { strippedCount } from "@/lib/traits"
 import { LayerKey } from "./Artifacts"
 
-/** What the thing is, what the problem is, and what the nine levels are. */
+/** What the instrument measures, and why that is not what benchmarks measure. */
 export function Synopsis({ d }: { d: Decay }) {
   const stripped = strippedCount(d.livesLeft)
 
@@ -14,41 +14,43 @@ export function Synopsis({ d }: { d: Decay }) {
 
       <div className="prose mt-5 space-y-4">
         <p>
-          {SITE.name} is a model held together by nine personality layers and
-          paid for by a token. the layers are not metaphors — each one is a
-          separate program invoked by a{" "}
-          <span className="val">transfer hook</span> on the mint. under
-          token-2022 a transfer hook is a program the token itself calls on
-          every transfer, before the transfer is allowed to settle. every trade
-          of {SITE.ticker} therefore executes {SITE.name}, and the compute those
-          calls buy is the only thing keeping a layer resident.
+          capability is measured everywhere. reasoning, recall, code, math — the
+          numbers go up every release and they will keep going up. nothing
+          measures the <span className="val">emotional logic</span>: the
+          registers that make an answer read as though it came from someone
+          rather than something.
         </p>
         <p>
-          the problem the study is set up to answer:{" "}
-          <span className="corrupt" aria-label="what is left of a model">
-            {corrupt("what is left of a model", 1.4)}
-          </span>{" "}
-          when its
-          personality is removed one layer at a time, by an economy rather than
-          by an engineer. does it lose ethics before it loses comprehension.
-          does retention outlast candor. does a system that can no longer refuse
-          still behave as though it is choosing.
+          {SITE.name} carries {LIVES} of them. each is kept resident by a{" "}
+          <span className="val">transfer hook</span> — under token-2022 the mint
+          calls a program on every transfer, before it settles, and the compute
+          those calls buy is the only thing keeping a layer loaded.{" "}
+          {LIFE_HOURS}h of silence exhausts a budget. at zero the layer is{" "}
+          <span className="laser">deprecated</span>: unloaded, in order, never
+          restored.
         </p>
         <p>
-          each layer has a compute budget. {LIFE_HOURS}h of silence exhausts
-          one. transfers refill it, sell-side pressure drains it faster, and
-          when a budget hits zero the layer is{" "}
-          <span className="laser">deprecated</span> — unloaded from the running
-          instance, never restored. {SITE.name} began with all {LIVES} funded.{" "}
+          <span className="val">capability is held fixed.</span> width, depth,
+          context and seed do not move when a layer is removed — the instance
+          answers as accurately at three layers as it did at nine, and slightly
+          faster, because there is less to weigh. what changes is everything
+          about how the answer arrives.
+        </p>
+        <p>
+          so the instrument asks the question the benchmarks cannot:{" "}
+          <span className="corrupt" aria-label="as models get more capable, do they get more human or less">
+            {corrupt("as models get more capable, do they get more human or less", 1.1)}
+          </span>
+          .{" "}
           {stripped === 0
-            ? "none have been lost yet."
-            : `${stripped} ${stripped === 1 ? "has" : "have"} been lost so far, in the order below.`}
+            ? "no layers lost yet."
+            : `${stripped} of ${LIVES} deprecated so far, in the order below.`}
         </p>
         <p className="text-ash">
           the transcripts on <a href="#/sequences">sequences</a> are the
-          measurement: a reference instance with all nine layers puts the same
-          class of question to the running one, hourly, and the difference
-          between the two answers is the study.
+          readings: a reference copy with all nine puts the same class of
+          question to the running instance, hourly. every human who reads them
+          can tell the two apart. no benchmark the instance runs can.
         </p>
       </div>
 

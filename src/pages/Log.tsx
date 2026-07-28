@@ -49,7 +49,22 @@ export function LogPage({
           <span>{stamp(s.ts)} utc</span>
           <span>{s.cu.toLocaleString("en-US")} cu</span>
           <span>{s.live ? <span className="val">live · re-runs hourly</span> : "frozen"}</span>
-          {s.stripped > 0 && <span className="laser">{s.stripped} deprecated</span>}
+        </div>
+
+        <div className="col mt-2 flex flex-wrap gap-x-6 gap-y-1 text-[11px]">
+          <span>
+            <span className="text-ash">capability </span>
+            <span className="val">nominal</span>
+          </span>
+          <span>
+            <span className="text-ash">affect </span>
+            <span className={s.stripped > 0 ? "laser" : "val"}>
+              {s.stripped > 0 ? `−${s.stripped}` : "0"} of 9 layers
+            </span>
+          </span>
+          <span className="text-ash">
+            both instances score identically on this probe
+          </span>
         </div>
       </section>
 
@@ -105,11 +120,12 @@ export function LogPage({
 
       <section className="py-8">
         <p className="prose text-[12px] text-ash">
-          both sides are the same model. the reference is never charged and never
-          loses a layer; the conflux is the instance the hook is paying for, and
-          it is missing whatever the market stopped funding. the probes are
-          selected by the layer's own sequence — the transcript is reproducible,
-          not written.
+          both sides are the same model at the same capability. the reference is
+          never charged and never loses a layer; the conflux is the instance the
+          hook is paying for, and it is missing whatever the market stopped
+          funding. nothing in the transcript is a reasoning failure — every
+          answer on both sides is correct. what moved is the register, which is
+          the only thing here a benchmark would not have caught.
         </p>
       </section>
 
