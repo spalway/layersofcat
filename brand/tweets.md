@@ -102,6 +102,53 @@ it is on the site.
 
 ---
 
+## intro thread — the technical figures
+
+Post as a six-tweet thread, one figure each, in order. Dry captions; the figures
+carry the weight.
+
+**1/ f1-dataflow.png**
+> nnth is a model whose personality is paid for per transaction.
+>
+> the mint calls a transfer hook before any transfer settles. the hook charges
+> compute against whichever of the nine layers is currently funded. no path
+> moves the token without running the model.
+
+**2/ f2-instance.png**
+> the funded layer is not configuration, it is a sequence.
+>
+> width 32, depth 4, ctx 256, temperature 0.676, relu, θ=16,896 — every one of
+> those read off the first five bytes of sha-256(mint:4). nobody picked them.
+
+**3/ f3-bytemap.png**
+> the whole instance is five bytes.
+>
+> b0–b4 give the architecture, b5–b13 give the trait weights, and the remaining
+> eighteen bytes specify nothing. they are published anyway, because dropping
+> them would make the preimage unverifiable.
+
+**4/ f4-lifecycle.png**
+> held → funded → deprecated. there is no fourth state and no return edge.
+>
+> the budget is not a countdown we run. it is a reading taken from the order
+> book, and the equation is printed on the site.
+
+**5/ f5-residue.png**
+> when a layer closes, one value crosses: the hash of the layer above joined to
+> the layer below.
+>
+> the order of the teardown becomes provable. the contents do not become
+> recoverable. drift between consecutive sequences is 128 of 256 bits — chance.
+
+**6/ f6-harness.png**
+> every hour, a reference copy with all nine layers puts a question to the
+> instance the market has been paying for.
+>
+> the divergence is recorded and never corrected. that is the experiment.
+> [link]
+
+---
+
 ## recurring formats
 
 These run indefinitely without new ideas. Pick a cadence and hold it.
