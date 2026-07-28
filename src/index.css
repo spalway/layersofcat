@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Pixelta";
+  src: url("/fonts/Pixelta.ttf") format("truetype");
+  font-display: swap;
+}
+
+@theme {
+  --font-mono: ui-monospace, "SFMono-Regular", "Menlo", "DejaVu Sans Mono",
+    "Consolas", monospace;
+  --font-display: "Pixelta", "Times New Roman", serif;
+
+  --color-paper: #e9e2d1;
+  --color-panel: #f1ecdf;
+  --color-terminal: #14120e;
+  --color-ink: #14120e;
+  --color-ash: #7d7565;
+  --color-rule: #c9c1ac;
+  --color-green: #00b64a;
+  --color-green-bright: #00e05c;
+  --color-green-soft: #cfeacd;
+  --color-laser: #ff2222;
+  /* empty slots — kept separate from --color-rule so chrome can vanish
+     without taking the data with it */
+  --color-hollow: #c9c1ac;
+
+  /* One measure for every block on the page. Defined in px, not ch: ch is
+     relative to the element's own font, so a heading and a paragraph both set
+     to 62ch do not line up. Everything is capped at this and pinned to the
+     container's left edge, so headings, meta lines, prose, tables and plots
+     all share one margin. */
+  --col: 620px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+/**
+ * Log pages run inverted: the session is a terminal, so the page around it
+ * becomes one too. Set on <html> by the router — every token below flips at
+ * once, so no component needs to know which theme it is in.
+ */
+:root[data-log] {
+  color-scheme: dark;
+
+  /* one flat surface: page, cards and terminal are the same black */
+  --color-paper: #000000;
+  --color-panel: #000000;
+  --color-terminal: #000000;
+  --color-ink: #e9e2d1;
+  --color-ash: #8b8371;
+  /* every border and rule on the page reads from this, so chrome disappears */
+  --color-rule: transparent;
+  --color-hollow: #3a352d;
+  --color-green: #00e05c;
+  --color-green-soft: #10301b;
+  --color-laser: #ff4a4a;
+}
+
+:root[data-log] .term {
+  border-color: transparent;
+}
+/* the reference keeps its own light ground; the conflux is the inverted one */
+:root[data-log] .plate.inverted {
+  background: transparent;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: center;
+  font-variant-ligatures: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-rule);
+}
+a:hover {
+  color: var(--color-green);
+  text-decoration-color: var(--color-green);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-rule);
+  margin: 0;
+}
+
+img.blend {
+  mix-blend-mode: multiply;
+}
+/* the subject art keeps its own ground on the light pages */
+.plate {
+  background: #e9e2d1;
+}
+.avatar.mirror {
+  filter: invert(1);
+  transform: scaleX(-1);
+}
+:root[data-log] .avatar.mirror {
+  filter: invert(1);
+  transform: scaleX(-1);
+}
+/* the running instance: same subject, inverted and reversed */
+img.conflux {
+  filter: invert(1);
+  transform: scaleX(-1);
+  mix-blend-mode: screen;
+}
+
+/* ---- type ---- */
+
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+/* combining-mark corruption stays in the page monospace; the marks are allowed
+   to stack out of the line box without pushing anything around */
+@utility corrupt {
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+@utility label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--color-ash);
+}
+
+@utility val {
+  color: var(--color-green);
+}
+
+@utility laser {
+  color: var(--color-laser);
+}
+
+@utility col {
+  width: 100%;
+  max-width: var(--col);
+  margin-inline: 0 auto;
+  text-align: left;
+}
+
+@utility prose {
+  width: 100%;
+  max-width: var(--col);
+  margin-inline: 0 auto;
+  text-align: left;
+}
+
+@utility head {
+  width: 100%;
+  max-width: var(--col);
+  margin-inline: 0 auto;
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+@utility hex {
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+/* ---- data ---- */
+
+table {
+  border-collapse: collapse;
+  /* left edge shared with every other block, never independently centred */
+  margin: 0;
+  font-size: 12px;
+}
+td,
+th {
+  padding: 3px 12px;
+  white-space: nowrap;
+  font-weight: normal;
+}
+th {
+  color: var(--color-ash);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-align: left;
+  border-bottom: 1px solid var(--color-rule);
+}
+td.k {
+  text-align: left;
+}
+td.n {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+tr.group td {
+  padding-top: 16px;
+  color: var(--color-ash);
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  text-align: left;
+}
+tr.open td {
+  background: var(--color-green-soft);
+}
+
+@utility sheet {
+  width: 100%;
+  max-width: var(--col);
+  margin-inline: 0 auto;
+  table-layout: fixed;
+}
+.sheet td,
+.sheet th {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-align: left;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+@utility scroll-x {
+  overflow-x: auto;
+}
+
+@utility panel {
+  border: 1px solid var(--color-rule);
+  background: var(--color-panel);
+}
+
+/* ---- terminal ---- */
+
+@utility term {
+  background: var(--color-terminal);
+  border: 1px solid var(--color-ink);
+  color: #d8d2c2;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.65;
+}
