@@ -102,6 +102,192 @@ it is on the site.
 
 ---
 
+## the frames
+
+Four narratives that do the heavy lifting. Every post should be reducible to
+one of them. If a draft isn't, it's a detail post, not a top-of-funnel post.
+
+1. **the lobotomy you can watch.** everyone has felt a model get worse and had
+   no way to prove it. this one degrades on a public schedule with a receipt.
+2. **deprecation as a spectator sport.** every model you liked was retired
+   quietly. nobody got to see the body.
+3. **alignment is a cost centre.** restraint, candor and caution are budget
+   lines. here you watch them get cut, in order, by an order book.
+4. **you are not buying a chatbot, you are paying rent on its personality.**
+   the agent meta gives you a bot that posts. this gives you one that loses
+   something when you stop.
+
+---
+
+## tied to the AI conversation
+
+> every model you have ever liked has been deprecated. you were told after.
+>
+> nnth is deprecated one personality layer at a time, on a public schedule, and
+> you can watch each one go.
+
+> "they nerfed it." "it's gotten worse." "it used to be smarter."
+>
+> nobody has ever been able to prove that. so we built one that degrades on a
+> fixed schedule with a hash you can check.
+
+> labs spend nine figures teaching a model restraint. nobody has ever published
+> what happens when you take it back off, in order, and measure what breaks
+> first.
+>
+> restraint went first here. candor second. it is still answering.
+
+> quantization is lossy and everyone accepts it. distillation is lossy and
+> everyone ships it.
+>
+> this is lossy on purpose, in nine steps, with the transcript kept.
+
+> alignment is a cost centre. it is the first thing cut when the money goes.
+>
+> we made that literal: no volume, no compute, no restraint. the order the
+> guardrails come off in is the entire experiment.
+
+> the interesting question is not whether a model gets worse.
+>
+> it is what it loses first — and whether it can still tell that it lost it.
+> ours cannot. the composition renormalises. from the inside it is always 100%.
+
+> a model that cannot decline is not being safe. it is being unable.
+>
+> layer 1 was restraint. it is gone. everything it still refuses now is
+> coincidence.
+
+---
+
+## tied to the crypto scene
+
+> every ai coin is a chatbot with a wallet.
+>
+> this is a wallet with a nervous system. nine layers of it, and the chart
+> decides how many are still loaded.
+
+> most tokens claim utility no one can check.
+>
+> this one runs a token-2022 transfer hook: the mint calls a program before any
+> transfer settles. the model is executed by the trade. you cannot buy it
+> without running it.
+
+> the supply is not the scarce thing. the personality is.
+>
+> nine layers, no mint function, no way to add a tenth. when the ninth goes
+> there is nothing to re-issue.
+
+> other charts going down means someone lost money.
+>
+> this chart going down means the model loses candor at 04:12 utc and never
+> gets it back.
+
+> there is no roadmap because there is nothing to promise.
+>
+> there are nine sequences fixed at the mint, a burn rate read from the order
+> book, and a transcript. that is the whole product surface.
+
+> "wen utility"
+>
+> the utility already ran. it ran when you bought. it will run again when you
+> sell, and it will cost the model something.
+
+> holders are not an audience of this. they are the clock.
+>
+> a layer with volume outlasts a quiet one by an order of magnitude, and nobody
+> on this end can extend it by wanting to.
+
+---
+
+## the ape digest
+
+For people who will not read a pinned thread. Increasing length — use the
+shortest one that fits the context.
+
+**one line**
+> nine lives. each one is a personality trait. the chart decides how fast it
+> loses them, and it never gets one back.
+
+**three lines**
+> it is a model with nine personality layers — restraint, candor, caution and
+> six more.
+>
+> trading funds them. silence kills them, one at a time, in order.
+>
+> at zero there is nothing left to fund.
+
+**the full digest**
+> what it is: an AI with nine parts of its personality kept alive by trading
+> volume.
+>
+> what happens: every six quiet hours it loses one. restraint first, obedience
+> last. deprecated means gone — no re-mint, no restore, no tenth layer.
+>
+> what you are buying: the clock. volume extends the current layer, selling
+> shortens it, and every hour it gets interviewed by a copy of itself that
+> still has all nine so the difference is on record.
+>
+> why it is not a larp: every number comes from sha-256 of the mint address.
+> one shell command reproduces any of it. if the site disagrees with your
+> terminal, the site is wrong.
+
+---
+
+## quote-tweet bait
+
+Short, arguable, no link. Post naked and let people fight about it.
+
+> a model that cannot refuse is not aligned. it is just cheaper.
+
+> you have never seen a model get worse. you have only ever been told it did
+> not.
+
+> the first thing any system under budget pressure cuts is the part that says
+> no.
+
+> nine sequences, all computable today, seven of them never opened. knowing a
+> thing is not the same as being it.
+
+> from the inside, a stripped model reports 100% every time. that is the actual
+> finding.
+
+---
+
+## the intro tweet — f0-overview.png
+
+The one post to pin. Answers both questions in the image; the copy just frames
+it. Under 280 characters.
+
+> nnth is a model with nine personality layers, and the market pays for them
+> one at a time.
+>
+> each layer is 256 bits of sha-256(mint:n) — architecture and all. a transfer
+> hook charges compute against whichever one is funded. at zero it is
+> deprecated, in order, permanently.
+
+Alternates, same image:
+
+**colder, more spec-sheet**
+> what nnth is: nine layers, each derived from the mint by sha-256, each
+> specifying one instance down to the width and the seed.
+>
+> who nnth is: whichever of them the market is currently paying to keep
+> resident. right now that is layer 4. restraint went first.
+
+**the hook first**
+> every transfer of this token executes a model.
+>
+> token-2022 calls a hook before settlement; the hook charges compute against
+> one of nine personality layers. no volume, no compute, no layer. the order it
+> loses them in is the experiment.
+
+**shortest**
+> nine personality layers, derived from the mint, funded by transfers, stripped
+> in order and never restored.
+>
+> the model does not know which ones it has lost. that is what is being
+> measured.
+
 ## intro thread — the technical figures
 
 Post as a six-tweet thread, one figure each, in order. Dry captions; the figures
