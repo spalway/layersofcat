@@ -64,14 +64,19 @@ export function LogPage({
 
           {s.turns.map((t, i) => {
             const given = t.who === "given"
+            // only the opening turn is a probe; after that both sides are replying
+            const cmd = given
+              ? i === 0
+                ? "ask"
+                : "reply"
+              : i === 1
+                ? `reply --degraded ${s.stripped}`
+                : "reply"
             return (
               <div key={i} className="mt-3">
                 <p className={`text-[11px] ${given ? "text-[#00e05c]" : "text-[#ff5252]"}`}>
                   nnth@{given ? "given" : "conflux"}:~$
-                  <span className="text-[#6f695c]">
-                    {" "}
-                    {given ? "ask" : `reply --degraded ${s.stripped}`}
-                  </span>
+                  <span className="text-[#6f695c]"> {cmd}</span>
                 </p>
                 <p className="text-[#d8d2c2]">
                   <span className="text-[#6f695c]">&gt; </span>

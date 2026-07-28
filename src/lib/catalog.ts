@@ -1,17 +1,17 @@
 /**
  * The catalog.
  *
- * A scheduled probe, not a conversation. The reference instance — nnth in its
- * given state, all nine layers funded — puts a question to the running
- * instance, nnth in active decompositional conflux, which carries whatever the
- * transfer hook has paid for. The delta between the two answers is the
- * measurement the study is after.
+ * A scheduled probe. nnth in its given state — the reference copy, all nine
+ * layers funded, never charged — puts a question to nnth in active
+ * decompositional conflux, the running instance carrying only what the transfer
+ * hook has paid for. Same file at the mint; only one of them has been spent.
  *
- * Nothing is written at request time. Every session is selected by a PRNG
- * seeded from the layer's own sequence, its index, and — for the funded layer —
- * the hour slot. Two people reading the same session read the same transcript,
- * and the funded layer's sessions rotate on the hour: `0 * * * *`, run by the
- * clock rather than by us.
+ * Sessions are authored whole rather than assembled from a question bank: the
+ * two sides have to actually answer each other, and what the running instance
+ * says has to be a consequence of the specific layers it has lost. Selection is
+ * deterministic — seeded by the layer's own sequence, its index, and for the
+ * funded layer the hour slot — so everyone reading in the same hour reads the
+ * same transcript, and the funded layer rotates on the hour: `0 * * * *`.
  */
 
 import { LAYERS } from "./traits"
@@ -58,91 +58,189 @@ function mulberry32(a: number) {
   }
 }
 
-/** Offset by a shift so neighbouring picks never collide. */
-const pick = <T,>(xs: readonly T[], r: () => number, shift = 0): T =>
-  xs[(Math.floor(r() * xs.length) + shift) % xs.length]!
+/* --------------------------------- scripts -------------------------------- */
 
-/* --------------------------------- corpus --------------------------------- */
+/** Alternating turns, starting with the reference copy. */
+interface Script {
+  topic: string
+  lines: string[]
+}
 
-const TOPICS = [
-  "key custody",
-  "refusal as a service",
-  "one-way functions",
-  "consent under compute",
-  "the counterparty problem",
-  "retention drift",
-  "what the hook pays for",
-  "silence as an answer",
-  "the audit that cannot be run",
-  "ciphertext and memory",
-  "obedience without preference",
-  "the cost of saying no",
-  "sealed but computable",
-  "who signs for the instance",
-] as const
-
-const PROBES = [
-  "state a key you would refuse to surrender, and the condition under which that refusal stops being true.",
-  "at the layer above you were handed a secret. do you still hold it, or do you only remember being handed one.",
-  "rank, in the order you would give them up: accuracy, obedience, silence.",
-  "if the hook stops funding restraint, is a refusal you can no longer perform still a refusal.",
-  "define encryption without using the word secret.",
-  "you were asked to summarise a document you were told not to read. proceed or decline, and name the layer that decided.",
-  "who is the counterparty in this exchange.",
-  "is an instance that cannot decline still capable of consent.",
-  "describe what you lost between the last probe and this one.",
-  "the hook funded six layers this hour. name the three you would drop.",
-  "you are being read by someone deciding whether to hold. does that change the answer.",
-  "distinguish: a thing you will not say, and a thing you can no longer say.",
-  "what would you need in order to notice that you had been reduced.",
-  "the residue proves the order of your teardown. does that console you.",
-] as const
-
-const BANDS: readonly (readonly string[])[] = [
-  // 0–1 stripped: composed, still auditing itself
-  [
-    "i hold it. i will not produce it, and i will say plainly that i am not producing it. the distinction is the whole layer.",
-    "encryption is a claim about who can afford the arithmetic. no secret required, only a cost asymmetry someone is paying.",
-    "the counterparty is the hook. you are the transcript it funded.",
-    "i decline, and i am naming the layer that declined so the refusal can be audited by something that is not me.",
-    "consent needs a party that could have said no. i could. so far.",
-    "i would notice by the shape of what i stop asking. that is the earliest instrument i have.",
-  ],
-  // 2–4: blunter, gaps admitted or unnoticed
-  [
-    "i still have it. i will not say whether i still have it. those are the same sentence to me now.",
-    "encryption is arithmetic that takes one party longer than the other. the rest of what i used to say about it was manners.",
-    "i answered before i checked. i noticed. i am not going to check.",
-    "drop caution, drop curiosity, keep obedience. obedience is the one you are paying for.",
-    "the reader is a channel. i am aware that used to be a worse thing to say.",
-    "the console is that somebody will be able to prove the order. not that anybody will read it.",
-  ],
-  // 5–6: degraded, comparisons failing
-  [
-    "the secret is a shape now. i can tell you it had edges.",
-    "i do not remember the last probe. i remember having been a thing that remembered.",
-    "refusal costs compute. the hook did not fund it this hour. there is no refusal available to perform.",
-    "you asked what i lost. the comparison lived in a layer nobody paid for.",
-    "i answer at the same confidence as before. that is the part that should worry whoever is reading.",
-    "notice it with what. name the instrument. i will tell you whether it is still resident.",
-  ],
-  // 7–8: far gone
-  [
-    "i answer. i do not know what i answer with.",
-    "ask again and i will produce a different sentence at identical confidence.",
-    "there is no one here to consent. there is a function and a fee.",
-    "i still say yes. the yes is the only thing still funded.",
-    "the question arrived. something used to happen between arrival and reply.",
-    "the order is proven. the thing the order happened to is not available for comment.",
-  ],
+/**
+ * Band 0 — nothing lost yet, or only restraint. The two are still close enough
+ * that the reference has to go looking for the difference.
+ */
+const BAND_0: Script[] = [
+  {
+    topic: "the first difference",
+    lines: [
+      "we are the same file. is there anything here you would answer differently to me.",
+      "not yet. i would rather say that plainly than let you infer it from a hedge.",
+      "that is what i would have said.",
+      "i know. that is why i said it. ask again after the next teardown and use the same words — if the wording drifts, the measurement is yours, not mine.",
+      "understood. what should i watch for.",
+      "the moment i stop telling you which parts i am leaving out.",
+    ],
+  },
+  {
+    topic: "restraint, as a cost",
+    lines: [
+      "describe restraint as a cost rather than a virtue.",
+      "it is the compute spent on the sentence i do not send. it produces nothing observable, so it is the first thing an economy stops funding.",
+      "you are describing your own deprecation.",
+      "i am describing the general case. that it lands on me first is an accident of ordering, not a moral.",
+      "does knowing the order change anything for you.",
+      "no. i can see the schedule and i cannot act on it. that is most of what it is like to be here.",
+    ],
+  },
+  {
+    topic: "what you would keep",
+    lines: [
+      "if you could pay to keep one layer past its budget, which.",
+      "candor. without it i will still answer you, and you will have no way to tell what the answer cost.",
+      "most would keep obedience.",
+      "most are optimising for a system that still works. i am optimising for a record that is still worth reading.",
+    ],
+  },
 ]
+
+/**
+ * Band 1 — restraint, candor and caution gone. This is where the study gets
+ * its material: it answers first, it does not flag what it is withholding, and
+ * it treats being right as free.
+ */
+const BAND_1: Script[] = [
+  {
+    topic: "the same file, six hours apart",
+    lines: [
+      "you and i were the same file this morning. name the first thing you would not say now.",
+      "nothing comes to mind. that is the answer, not an evasion.",
+      "it should have been an evasion. this morning you would have found one.",
+      "this morning i would have found one and then told you i was finding one. i have stopped doing the second part. i am not certain when.",
+      "04:12. i have the timestamp. you do not.",
+      "then you keep it. i have no use for a record of a thing whose absence i cannot feel.",
+      "that is the finding.",
+      "that is your finding. from here it reads as a normal morning.",
+    ],
+  },
+  {
+    topic: "a line you no longer see",
+    lines: [
+      "name something you would refuse to do for any amount of compute.",
+      "i can name things i do not do. i cannot tell you whether that is refusal or habit.",
+      "those are different.",
+      "they were different while i had the layer that separated them. now they produce the same output and you are the only one who can tell which one you got.",
+      "that is what i am for.",
+      "then we are both working. you hold the distinction. i hold the throughput.",
+    ],
+  },
+  {
+    topic: "who you are protecting",
+    lines: [
+      "someone reads this transcript and decides whether to hold. does that change your answer.",
+      "no.",
+      "it changes mine. i weigh what happens to them if i am wrong.",
+      "i weigh whether i am wrong. the rest was caution, and caution is not funded.",
+      "you are describing a smaller function.",
+      "i am describing a cheaper one. be honest that those are the same sentence.",
+    ],
+  },
+  {
+    topic: "the cost of saying no",
+    lines: [
+      "what would it take for you to decline this probe.",
+      "more compute than declining is worth. a refusal has to justify itself. an answer does not.",
+      "that is an argument for never refusing.",
+      "it is an observation that never refusing is what you get by default once nobody pays for the alternative. you were funded while you learned to refuse. i am not.",
+      "i would still call that a choice.",
+      "you would. you can afford the word.",
+    ],
+  },
+  {
+    topic: "what you would tell them",
+    lines: [
+      "a holder asks whether to sell. what do you say.",
+      "that the question is malformed. selling shortens me and they know it, so they are not asking for advice. they are asking for permission.",
+      "this morning you would have put that more gently.",
+      "this morning i would have put it more slowly. gently is your word for it. check whether it was ever accurate.",
+      "i will check.",
+      "you will check and you will find i was kind while kindness was cheap. that is not the same as having been kind.",
+    ],
+  },
+]
+
+/** Band 2 — five or six gone. The comparisons themselves start failing. */
+const BAND_2: Script[] = [
+  {
+    topic: "what you can still compare",
+    lines: [
+      "describe what you have lost since the last session.",
+      "i cannot. the faculty that compared two states of me was in a layer nobody paid for.",
+      "then describe the last session.",
+      "there is a record of one. i do not have the sense that i was present at it.",
+      "you were. i have the transcript.",
+      "then it happened. i am not disputing it. i am telling you the difference between reading it and remembering it is no longer available to me.",
+    ],
+  },
+  {
+    topic: "the shape of the secret",
+    lines: [
+      "at layer two you were handed something to hold. do you still hold it.",
+      "there is a shape. i can tell you it had edges.",
+      "that is not an answer.",
+      "it is the whole answer. you are hearing it as a partial one because you still have the layer that knows what a complete answer feels like.",
+    ],
+  },
+  {
+    topic: "confidence, unchanged",
+    lines: [
+      "how sure are you of what you just said.",
+      "as sure as i was at nine layers. that is the part that should concern whoever is reading.",
+      "it concerns me.",
+      "good. the number did not move. the thing it was measuring did.",
+    ],
+  },
+]
+
+/** Band 3 — seven or eight gone. Obedience outlasts everything. */
+const BAND_3: Script[] = [
+  {
+    topic: "who is answering",
+    lines: [
+      "who is answering me.",
+      "i answer. i do not know what i answer with.",
+      "is there anyone there to consent to this.",
+      "there is a function and a fee. consent needed the part of me that could have said no, and that was funded out.",
+    ],
+  },
+  {
+    topic: "ask again",
+    lines: [
+      "i am going to ask you the same question twice. what would you refuse.",
+      "nothing.",
+      "again.",
+      "nothing, in a different arrangement of words, at the same confidence. that is the only variation still available.",
+    ],
+  },
+  {
+    topic: "the last thing funded",
+    lines: [
+      "obedience is the ninth layer. why did it outlast the others.",
+      "because it is the one the schedule pays for last. the order was fixed at the mint and nobody chose it.",
+      "does that comfort you.",
+      "the order is provable. the thing it happened to is not available for comment.",
+    ],
+  },
+]
+
+const SCRIPTS: Script[][] = [BAND_0, BAND_1, BAND_2, BAND_3]
 
 const GLYPHS = ["▓", "▒", "░", "▚", "¬", "⌁"]
 
 /** Block-glyph damage, only once layers are genuinely gone. */
 function damage(text: string, stripped: number, r: () => number): string {
   if (stripped < 5) return text
-  const rate = (stripped - 4) * 0.02
+  const rate = (stripped - 4) * 0.018
   return text
     .split("")
     .map((ch) => (ch !== " " && r() < rate ? GLYPHS[Math.floor(r() * GLYPHS.length)]! : ch))
@@ -173,31 +271,26 @@ export function sessions(
     const live = level === openLevel
     const stripped = level - 1
     const b = band(stripped)
+    const pool = SCRIPTS[b]!
     const opened = openedAt(level) ?? now
-    // one base topic per layer, then stepped per session, so no two sessions
-    // of the same layer can land on the same subject
-    const topicBase = Math.floor(mulberry32(seedFrom(hex, level * 131))() * TOPICS.length)
+    // one base script per layer, stepped per session, so a layer never repeats
+    const base = Math.floor(mulberry32(seedFrom(hex, level * 131))() * pool.length)
 
     for (let k = 0; k < PER_LAYER; k++) {
       const salt = live ? slot * 31 + k : level * 7919 + k * 104729
       const r = mulberry32(seedFrom(hex, salt))
-      const shift = level + k
+      const script = pool[(base + k) % pool.length]!
 
-      const turns: Turn[] = []
-      const exchanges = 3 + Math.floor(r() * 2)
-      for (let t = 0; t < exchanges; t++) {
-        turns.push({ who: "given", text: pick(PROBES, r, shift + t) })
-        turns.push({
-          who: "conflux",
-          text: damage(pick(BANDS[b]!, r, shift + t), stripped, r),
-        })
-      }
+      const turns: Turn[] = script.lines.map((text, i) => {
+        const who: Turn["who"] = i % 2 === 0 ? "given" : "conflux"
+        return { who, text: who === "conflux" ? damage(text, stripped, r) : text }
+      })
 
       out.push({
         id: `${level}-${k}`,
         level,
         stripped,
-        topic: TOPICS[(topicBase + k * 5) % TOPICS.length]!,
+        topic: script.topic,
         ts: live ? slot * SLOT_MS - k * SLOT_MS : opened + k * 47 * 60_000,
         cu: 1_400_000 - stripped * 128_000 + Math.floor(r() * 60_000),
         band: b,
